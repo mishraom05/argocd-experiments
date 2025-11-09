@@ -6,8 +6,12 @@ metadata:
 spec:
   destination:
     namespace: guestbook
-    server: localhost:8080
+    server: "https://localhost:8080"
+  project: default
   source:
     path: applications
     repoURL: "https://github.com/mishraom05/argocd-experiments.git"
-    targetRevision: HEAD
+    targetRevision: main
+  syncPolicy:
+    syncOptions:
+      - createNamespace=true
