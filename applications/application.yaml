@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  destination:
+    namespace: guestbook
+    server: localhost:8080
+  source:
+    path: applications
+    repoURL: "https://github.com/mishraom05/argocd-experiments.git"
+    targetRevision: HEAD
